@@ -1,6 +1,6 @@
 # livraria-stone
 
-> Desafio Stone - Previsão de finalização (21/11/2017)
+> Desafio Stone
 
 ## Build Setup
 
