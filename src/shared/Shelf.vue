@@ -26,7 +26,7 @@ export default {
 
 		currentConverter(value) {
 			if(value) {
-				let amount = 'R$ '+value.amount.toFixed(2).toString().replace('.',',');
+				let amount = 'R$ '+value.amount.toFixed(2).toString();
 				return amount;
 			} else {
 				return "Produto Indisponível";

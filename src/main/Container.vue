@@ -50,7 +50,7 @@
 		methods: {
 			getList: function() {
 				let books = this.books;
-				let list = this.$http.get('https://www.googleapis.com/books/v1/volumes?q=subject:history&maxResults=30&orderBy=newest');
+				let list = this.$http.get('https://www.googleapis.com/books/v1/volumes?q=subject:science&maxResults=30&orderBy=newest');
 				list.then(res => res.json())
 				.then(res => {
 					res.items.map(function(e) {
