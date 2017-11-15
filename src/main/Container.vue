@@ -1,6 +1,54 @@
 <template>
   <div>
     <page-header></page-header>
+	
+	<section class="container-shelf">
+		<div class="container">
+			<div class="shelf">
+				<h2>Nome do livro</h2>
+				<p>Descrição</p>
+				<p>Preço</p>
+			</div>
+			<div class="shelf">
+				<h2>Nome do livro</h2>
+				<p>Descrição</p>
+				<p>Preço</p>
+			</div>
+			<div class="shelf">
+				<h2>Nome do livro</h2>
+				<p>Descrição</p>
+				<p>Preço</p>
+			</div>
+			<div class="shelf">
+				<h2>Nome do livro</h2>
+				<p>Descrição</p>
+				<p>Preço</p>
+			</div>
+			<div class="shelf">
+				<h2>Nome do livro</h2>
+				<p>Descrição</p>
+				<p>Preço</p>
+			</div>
+			<div class="shelf">
+				<h2>Nome do livro</h2>
+				<p>Descrição</p>
+				<p>Preço</p>
+			</div>
+			<div class="shelf">
+				<h2>Nome do livro</h2>
+				<p>Descrição</p>
+				<p>Preço</p>
+			</div>
+			<div class="shelf">
+				<h2>Nome do livro</h2>
+				<p>Descrição</p>
+				<p>Preço</p>
+			</div>
+		</div>
+		
+	</section>
+
+
 
     <page-footer></page-footer>
   </div>
