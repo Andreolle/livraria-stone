@@ -16,6 +16,5 @@ export default {
 	.container-shelf {
 		padding-top: 25px;
 		padding-bottom: 25px;
-		text-align: center;
 	}
 </style>

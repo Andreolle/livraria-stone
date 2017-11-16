@@ -19,7 +19,7 @@
 		font-family: 'Montserrat', sans-serif;
 	}
 	.container {
-		width: 1280px;
+		max-width: 1280px;
 		margin: 0 auto;
 	}
 </style>

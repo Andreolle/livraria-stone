@@ -9,6 +9,7 @@
 			<p class="shelf__description">{{ description | truncate(40) }}</p>
 			<p class="shelf__price">{{ price | currentConverter }}</p>
 		</div>
+		<a href="#" class="shelf__buy" v-if="price">Comprar</a>
     </div>
 </template>
 
@@ -26,8 +27,12 @@ export default {
 
 		currentConverter(value) {
 			if(value) {
-				let amount = 'R$ '+value.amount.toFixed(2).toString();
-				return amount;
+				let amount = value.amount.toFixed(2).toString();
+				if(amount == "0.00") {
+					return "Grátis"
+				} else {
+					return 'R$ '+amount;
+				}
 			} else {
 				return "Produto Indisponível";
 			}
@@ -41,10 +46,14 @@ export default {
 <style lang="sass?outputStyle=expanded">
 	/* Colours */
 	$text-color: #003920;
+	$white: #ffffff;
+
 	.shelf {
+		position: relative;
 		border: 1px solid lighten($text-color, 75%);
 		display: inline-block;
-		width: 25%;
+		width: 24%;
+		height: 215px;
 		margin: 0 1% 1% 0;
 		vertical-align: top;
 		box-sizing: border-box;
@@ -80,6 +89,24 @@ export default {
 		&__price {
 			font-weight: 600;
 			color: #0db14b;
+		}
+		&__buy {
+			position: absolute;
+			left: 0;
+			text-align: center;
+			bottom: 0;
+			background: #95c93f;
+			color: $white;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 8px 20px;
+			display: inline-block;
+			width: 100%;
+			box-sizing: border-box;
+			clear: both;
+			&:hover {
+				background: #103a21;
+			}
 		}
 	}
 </style>

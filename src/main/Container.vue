@@ -1,20 +1,9 @@
 <template>
   <div>
     <page-header></page-header>
-	
 	<shelf-display>
 		
 		<template v-for="(book, index) of books">
-			<!-- <div class="shelf">
-				<h2>{{ book.volumeInfo.title }}</h2>
-				<p>{{ book.volumeInfo.description }}</p>
-				
-				<p v-for="(price, prop, index) of book.saleInfo.listPrice" :key="price[0]" v-if="prop =='amount'" >
-					{{ price }}
-				</p>
-			</div> -->
-
-
 			<shelf 
 			:title="book.volumeInfo.title"
 			:description="book.volumeInfo.description"
@@ -44,13 +33,25 @@
 		},
 		data() {
 			return {
-				books: []		
+				books: [],
+				searchTerm: ""
 			};
 		},
 		methods: {
 			getList: function() {
 				let books = this.books;
-				let list = this.$http.get('https://www.googleapis.com/books/v1/volumes?q=subject:science&maxResults=30&orderBy=newest');
+				let list = this.$http.get('https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=30&orderBy=newest');
+				list.then(res => res.json())
+				.then(res => {
+					res.items.map(function(e) {
+						books.push(e);
+					});
+				})
+			},
+			updateList: function() {
+				let books = this.books;
+				let searchTerm = this.searchTerm;
+				let list = this.$http.get('https://www.googleapis.com/books/v1/volumes?q='+searchTerm+'&maxResults=30&orderBy=newest');
 				list.then(res => res.json())
 				.then(res => {
 					res.items.map(function(e) {

@@ -5,6 +5,13 @@
 	    		<img src="../assets/img/logo.png" alt="logo">
 	    	</h1>
 
+			<div class="header__search">
+				<input type="text" class="search-field" placeholder="O que você procura?">
+				<div class="search">
+					<img src="../assets/img/magnifying-glass.svg">
+				</div>
+			</div>
+
 	    	<div class="minicart">
 				<div class="minicart__icon">
 					<img src="../assets/img/shopping-cart.svg" alt="">
@@ -17,11 +24,7 @@
 
 <script>
 export default {
-	data() {
-		return {
-			
-		}
-	}
+
 }
 </script>
 
@@ -42,6 +45,30 @@ export default {
 			margin: 0;
 			img {
 				width: 100%;
+			}
+		}
+
+		&__search {
+			width: 50%;
+			position: relative;
+			display: inline-block;
+			font-size: 14px;
+			margin-left: 35px;
+			margin-bottom: -10px;
+			.search-field {
+				padding: 8px 8px;
+				width: 100%;
+				box-sizing: border-box;
+			}
+			.search {
+				position: absolute;
+				top: 7px;
+				right: 10px;
+				width: 20px;
+				cursor: pointer;
+				img {
+					width: 100%;
+				}
 			}
 		}
 
