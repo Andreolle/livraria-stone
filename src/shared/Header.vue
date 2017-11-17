@@ -2,7 +2,9 @@
 	<header class="header">
 		<div class="container">
 	    	<h1 class="header__logo">
-	    		<img src="../assets/img/logo.png" alt="logo">
+				<a href="/">
+					<img src="../assets/img/logo.png" alt="logo">
+				</a>
 	    	</h1>
 
 			<div class="header__search">
