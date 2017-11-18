@@ -2,9 +2,9 @@
 	<header class="header">
 		<div class="container">
 	    	<h1 class="header__logo">
-				<a href="/">
+				<router-link to="/">
 					<img src="../assets/img/logo.png" alt="logo">
-				</a>
+				</router-link>
 	    	</h1>
 
 			<div class="header__search">
@@ -15,9 +15,11 @@
 			</div>
 
 	    	<div class="minicart">
-				<div class="minicart__icon">
-					<img src="../assets/img/shopping-cart.svg" alt="">
-				</div>
+				<router-link to="/cart">
+					<div class="minicart__icon">
+						<img src="../assets/img/shopping-cart.svg" alt="">
+					</div>
+				</router-link>
 				<div class="minicart__quantity">00</div>
 			</div>
 		</div>
@@ -39,6 +41,7 @@ export default {
 	.header {
 		background: $header-green;
 		padding: 15px 0 10px 0;
+		border-bottom: 2px solid #003920;
 
 		&__logo {
 			display: inline-block;

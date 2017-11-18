@@ -18,7 +18,9 @@
             <span class="price__amount">R$ 99.99</span>
         </div>
         <div class="remove-item">
-            <a href="#" class="remove-item__btn">X</a>
+            <a href="#" class="remove-item__btn">
+                <img src="../assets/img/remove.svg">
+            </a>
         </div>
     </div>
 </template>
@@ -33,6 +35,7 @@ export default {
     .cart-item {
         display: block;
         border-bottom: 1px solid #003920;
+        margin-bottom: 25px;
         .product, .quantity,
         .price, .remove-item {
             position: relative;
@@ -42,10 +45,9 @@ export default {
         }
 
         .product {
-            width: 50%;
+            width: 60%;
             &__img {
                 display: inline-block;
-                border: 1px solid red;
                 width: 100px;
                 vertical-align: top;
                 img {
@@ -62,6 +64,8 @@ export default {
         }
 
         .quantity {
+            width: 10%;
+            text-align: center;
             &__minus,
             &__plus {
                 display: inline-block;
@@ -72,6 +76,23 @@ export default {
                 width: 30px;
             }
             
+        }
+
+        .price {
+            width: 20%;
+            text-align: center;
+        }
+
+        .remove-item {
+            width: 5%;
+            text-align: center;
+            &__btn {
+                width: 15px;
+                display: inline-block;
+                img {
+                    width: 100%;    
+                }
+            }
         }
     }
 

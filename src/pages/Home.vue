@@ -1,8 +1,6 @@
 <template>
   <div>
-    <page-header></page-header>
 	<shelf-display>
-		
 		<template v-for="(book, index) of books">
 			<shelf 
 			:title="book.volumeInfo.title"
@@ -13,21 +11,15 @@
 
 		</template>
 	</shelf-display>
-
-    <page-footer></page-footer>
   </div>
 </template>
 
 <script>
-	import Header from "../shared/Header.vue"
-	import Footer from "../shared/Footer.vue"
 	import Shelf from "../shared/Shelf.vue"
 	import Display from "../components/Display.vue"
 
 	export default {
 		components: {
-			"page-header": Header,
-			"page-footer": Footer,
 			"shelf-display": Display,
 			"shelf": Shelf
 		},

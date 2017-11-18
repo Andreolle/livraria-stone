@@ -60,7 +60,7 @@ export default {
 		padding: 10px;
 		&__img {
 			display: inline-block;
-			width: 30%;
+			width: 100px;
 			float: left;
 			img {
 				width: 100%;
@@ -71,6 +71,7 @@ export default {
 			display: inline-block;
 			vertical-align: top;
 			width: 60%;
+			min-width: 170px;
 			margin-left: 10px;
 			text-align: left;
     		box-sizing: border-box;
@@ -106,6 +107,29 @@ export default {
 			clear: both;
 			&:hover {
 				background: #103a21;
+			}
+		}
+	}
+
+	@media screen and (min-width: 996px) and (max-width: 1280px) {
+		.shelf {
+			width: 32%;
+		}
+	}
+
+	@media screen and (min-width: 660px) and (max-width: 995px) {
+		.shelf {
+			width: 48%;
+		}
+	}
+
+	@media screen and (max-width: 659px) {
+		.shelf {
+			width: 100%;
+			height: 195px;
+			margin: 0 0 15px 0;
+			&__img {
+				width: 85px;
 			}
 		}
 	}

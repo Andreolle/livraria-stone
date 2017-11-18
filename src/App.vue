@@ -1,12 +1,20 @@
 <template>
 	<div id="app">
+		<page-header></page-header>
 		<router-view/>
+		<page-footer></page-footer>
 	</div>
 </template>
 
 <script>
+	import Header from "./shared/Header.vue"
+	import Footer from "./shared/Footer.vue"
+
 	export default {
-		
+		components: {
+			"page-header": Header,
+			"page-footer": Footer
+		}
 	}
 </script>
 

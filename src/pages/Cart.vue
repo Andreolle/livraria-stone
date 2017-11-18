@@ -1,26 +1,18 @@
 <template>
   <div>
-    <page-header></page-header>
-	
     <section class="page-cart">
         <div class="container">
             <cart-item></cart-item>
         </div>
     </section>
-    
-    <page-footer></page-footer>
   </div>
 </template>
 
 <script>
-	import Header from "../shared/Header.vue"
-    import Footer from "../shared/Footer.vue"
     import Item from "../components/CartItem.vue"
 
 	export default {
 		components: {
-			"page-header": Header,
-            "page-footer": Footer,
             "cart-item": Item
 		},
 		data() {
@@ -32,15 +24,13 @@
 
 
 <style scoped>
-    .header {
-        margin-bottom: 60px;
-    }
     .page-cart {
-        
+        min-height: calc(100vh - 138px);
+        padding: 60px 0;
+        box-sizing: border-box;
     }
-    .footer {
-        position: absolute;
-        left: 0;
-        bottom: 0;
+
+    .container {
+        max-width: 900px;
     }
 </style>

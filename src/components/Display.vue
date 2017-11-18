@@ -14,7 +14,9 @@ export default {
 
 <style lang="sass?outputStyle=expanded" scoped>
 	.container-shelf {
+		min-height: calc(100vh - 138px);
 		padding-top: 25px;
 		padding-bottom: 25px;
+		text-align: center;
 	}
 </style>
