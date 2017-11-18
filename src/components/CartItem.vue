@@ -1,6 +1,6 @@
 <template>
-	<div class="cart-item">
-        <div class="product">
+	<tr class="cart-item">
+        <td class="product">
             <div class="product__img">
                 <img src="" alt="foto">
             </div>
@@ -8,21 +8,21 @@
                 <h2 class="product-name">Titulo</h2>
                 <p class="product-description">Descrição curta</p>
             </div>
-        </div>
-        <div class="quantity">
+        </td>
+        <td class="quantity">
             <div class="quantity__minus">-</div>
             <input type="text" class="quantity__selected">
             <div class="quantity__plus">+</div>
-        </div>
-        <div class="price">
+        </td>
+        <td class="price">
             <span class="price__amount">R$ 99.99</span>
-        </div>
-        <div class="remove-item">
+        </td>
+        <td class="remove-item">
             <a href="#" class="remove-item__btn">
                 <img src="../assets/img/remove.svg">
             </a>
-        </div>
-    </div>
+        </td>
+    </tr>
 </template>
 
 <script>
@@ -33,19 +33,11 @@ export default {
 
 <style lang="sass?outputStyle=expanded">
     .cart-item {
-        display: block;
-        border-bottom: 1px solid #003920;
-        margin-bottom: 25px;
-        .product, .quantity,
-        .price, .remove-item {
-            position: relative;
-            display: inline-block;
-            vertical-align: top;
-            box-sizing: border-box;
+        td {
+            border-bottom:1pt solid black;
+            padding: 20px 0 3px 0;
         }
-
         .product {
-            width: 60%;
             &__img {
                 display: inline-block;
                 width: 100px;
@@ -59,17 +51,19 @@ export default {
                 vertical-align: top;
                 .product-name {
                     margin: 0;
+                    font-size: 16px;
+                }
+                .product-description {
+                    font-size: 14px;
                 }
             }
         }
 
         .quantity {
-            width: 10%;
             text-align: center;
             &__minus,
             &__plus {
                 display: inline-block;
-                width: 10%;
             }
             &__selected {
                 display: inline-block;
@@ -79,15 +73,14 @@ export default {
         }
 
         .price {
-            width: 20%;
             text-align: center;
+            font-size: 14px;
         }
 
         .remove-item {
-            width: 5%;
             text-align: center;
             &__btn {
-                width: 15px;
+                width: 12px;
                 display: inline-block;
                 img {
                     width: 100%;    
@@ -95,5 +88,4 @@ export default {
             }
         }
     }
-
 </style>

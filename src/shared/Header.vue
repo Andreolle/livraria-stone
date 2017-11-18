@@ -39,9 +39,14 @@ export default {
 	$white: #ffffff;
 
 	.header {
+		position: relative;
 		background: $header-green;
 		padding: 15px 0 10px 0;
 		border-bottom: 2px solid #003920;
+
+		.container {
+			position: relative;
+		}
 
 		&__logo {
 			display: inline-block;
@@ -78,8 +83,9 @@ export default {
 		}
 
 		.minicart {
-			float: right;
-			margin-top: 15px;
+			position: absolute;
+			right: 0;
+			top: 10px;
 			&__icon {
 				display: inline-block;
 				position: relative;
@@ -104,6 +110,28 @@ export default {
 			}
 			img {
 				width: 100%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+		.header {
+			.minicart {
+				right: 35px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		.header {
+			&__search {
+				display: block;
+				width: 100%;
+				margin: 10px 0px 0px 0px;
+			}
+
+			.minicart {
+				right: 15px;
 			}
 		}
 	}

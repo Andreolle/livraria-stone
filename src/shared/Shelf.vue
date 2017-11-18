@@ -111,15 +111,29 @@ export default {
 		}
 	}
 
+	@media screen and (min-width: 1281px) {
+		.shelf {
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+	}
+
 	@media screen and (min-width: 996px) and (max-width: 1280px) {
 		.shelf {
 			width: 32%;
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
 		}
 	}
 
 	@media screen and (min-width: 660px) and (max-width: 995px) {
 		.shelf {
 			width: 48%;
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
 		}
 	}
 

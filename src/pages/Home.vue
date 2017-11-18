@@ -32,7 +32,7 @@
 		methods: {
 			getList: function() {
 				let books = this.books;
-				let list = this.$http.get('https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=30&orderBy=newest');
+				let list = this.$http.get('https://www.googleapis.com/books/v1/volumes?q=subject:culture&maxResults=30&orderBy=newest');
 				list.then(res => res.json())
 				.then(res => {
 					res.items.map(function(e) {
