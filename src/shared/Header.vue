@@ -8,7 +8,7 @@
 	    	</h1>
 
 			<div class="header__search">
-				<input type="text" class="search-field" placeholder="O que você procura?">
+				<input type="text" class="search-field" @input="searchText = $event.target.value" placeholder="O que você procura?">
 				<div class="search">
 					<img src="../assets/img/magnifying-glass.svg">
 				</div>
@@ -28,8 +28,13 @@
 
 <script>
 export default {
-
+	data() {
+		return {
+			searchText: ""
+		}
+	}
 }
+
 </script>
 
 <style lang="sass?outputStyle=expanded" scoped>

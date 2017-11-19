@@ -8,7 +8,6 @@
 			:price="book.saleInfo.listPrice"
 			:img="book.volumeInfo.imageLinks.thumbnail"
 			></shelf>
-
 		</template>
 	</shelf-display>
   </div>

@@ -64,10 +64,16 @@ export default {
             &__minus,
             &__plus {
                 display: inline-block;
+                font-size: 20px;
+                vertical-align: middle;
+                margin: 0 4px;
+                cursor: pointer;
             }
             &__selected {
                 display: inline-block;
                 width: 30px;
+                padding: 3px 5px;
+                text-align: center;
             }
             
         }

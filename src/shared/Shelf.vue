@@ -18,10 +18,12 @@ export default {
 	props: ['title', 'description', 'price', 'img'],
 	filters: {
 		truncate(value, qty) {
-			if (value.length > qty) {
-				return value.substring(0, qty)+"...";	
-			} else {
-				return value;
+			if(value) {
+				if (value.length > qty) {
+					return value.substring(0, qty)+"...";	
+				} else {
+					return value;
+				}
 			}
 		},
 
