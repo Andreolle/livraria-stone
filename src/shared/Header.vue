@@ -6,7 +6,7 @@
 					<img src="../assets/img/logo.png" alt="logo">
 				</router-link>
 	    	</h1>
-
+			
 			<div class="header__search">
 				<input type="text" class="search-field" @input="searchText = $event.target.value" placeholder="O que você procura?">
 				<div class="search">

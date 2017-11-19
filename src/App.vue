@@ -1,7 +1,9 @@
 <template>
 	<div id="app">
 		<page-header></page-header>
-		<router-view/>
+		<div class="content">
+			<router-view/>
+		</div>
 		<page-footer></page-footer>
 	</div>
 </template>
@@ -29,6 +31,10 @@
 	.container {
 		max-width: 1280px;
 		margin: 0 auto;
+	}
+
+	.content {
+		min-height: calc(100vh - 140px);
 	}
 
 	@media screen and (max-width: 1280px) {

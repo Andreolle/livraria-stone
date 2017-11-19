@@ -17,6 +17,13 @@ export default new Router({
       path: '/cart',
       name: 'Cart',
       component: Cart
+    },
+    {
+      path: '*',
+      name: '404',
+      component: {
+        template: '<div class="container"><h1>Página não encontrada</h1></div>'
+      }
     }
   ]
 })

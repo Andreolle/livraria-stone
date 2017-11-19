@@ -37,7 +37,6 @@
 
 <style lang="sass?outputStyle=expanded" scoped>
     .page-cart {
-        min-height: calc(100vh - 138px);
         padding: 60px 0;
         box-sizing: border-box;
     }
