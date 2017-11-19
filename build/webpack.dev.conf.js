@@ -5,7 +5,6 @@ const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
@@ -60,16 +59,6 @@ module.exports = new Promise((resolve, reject) => {
       process.env.PORT = port
       // add port to devServer config
       devWebpackConfig.devServer.port = port
-
-      // Add FriendlyErrorsPlugin
-      devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
-        compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${config.dev.host}:${port}`],
-        },
-        onErrors: config.dev.notifyOnErrors
-        ? utils.createNotifierCallback()
-        : undefined
-      }))
 
       resolve(devWebpackConfig)
     }
