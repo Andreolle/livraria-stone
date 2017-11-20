@@ -7,9 +7,9 @@
 				</router-link>
 	    	</h1>
 			
-			<div class="header__search">
+			<div class="header__search" v-if="$route.path != '/cart'">
 				<input type="text" class="search-field" @input="searchText = $event.target.value" placeholder="O que você procura?">
-				<div class="search">
+				<div class="search" @click="search">
 					<img src="../assets/img/magnifying-glass.svg">
 				</div>
 			</div>
@@ -31,6 +31,13 @@ export default {
 	data() {
 		return {
 			searchText: ""
+		}
+	},
+	methods: {
+		'search': function() {
+			let term = this.searchText;
+			this.$store.dispatch('GET_BOOKS', term);
+			document.querySelectorAll('.search-field')[0].value = ""
 		}
 	}
 }

@@ -1,4 +1,5 @@
 import Vue from "vue"
+import { error } from "util";
 
 export default {
     GET_BOOKS(content,search){
@@ -10,8 +11,9 @@ export default {
             res.items.map(function(e) {
                 books.push(e);
             });
-        }).then(function() {
             content.commit('GET_BOOKS', books);
+        }).catch(error => {
+            console.log("Resultado não encontrado");
         })
     }
 }

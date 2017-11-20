@@ -29,7 +29,8 @@
 		},
 		computed: {
 			getList: function() {
-				return this.books = this.$store.state.books;	
+				const list = this.$store.state.books;
+				return this.books = list;
 			}
 		},
 		created () {

@@ -1,7 +1,7 @@
 <template>
 	<div class="shelf">
 		<div class="shelf__img">
-			<img :src="img"/>
+			<img :src="img">
 		</div>
 		
 		<div class="shelf__content">
@@ -38,7 +38,6 @@ export default {
 			} else {
 				return "Produto Indisponível";
 			}
-			
 		}
 	}
 	
