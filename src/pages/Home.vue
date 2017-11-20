@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<shelf-display>
-			<template v-for="(book, index) of getList">
+			<template v-for="book of getList">
 				<shelf 
 				:title="book.volumeInfo.title"
 				:description="book.volumeInfo.description"
@@ -31,7 +31,7 @@
 		computed: {
 			getList: function() {
 				const list = this.$store.state.books;
-				return this.books = list;
+				return list;
 			}
 		},
 		created () {

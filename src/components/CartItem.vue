@@ -2,20 +2,20 @@
 	<tr class="cart-item">
         <td class="product">
             <div class="product__img">
-                <img src="" alt="foto">
+                <img :src="img">
             </div>
             <div class="product__description">
-                <h2 class="product-name">Titulo</h2>
-                <p class="product-description">Descrição curta</p>
+                <h2 class="product-name">{{ title | truncate(30) }}</h2>
+                <p class="product-description">{{ description | truncate(200) }}</p>
             </div>
         </td>
         <td class="quantity">
             <div class="quantity__minus">-</div>
-            <input type="text" class="quantity__selected">
+            <input type="text" class="quantity__selected" value="1">
             <div class="quantity__plus">+</div>
         </td>
         <td class="price">
-            <span class="price__amount">R$ 99.99</span>
+            <span class="price__amount">{{ price  | currentConverter }}</span>
         </td>
         <td class="remove-item">
             <a href="#" class="remove-item__btn">
@@ -26,13 +26,16 @@
 </template>
 
 <script>
-export default {
-
-}
+    import filters from '../module/filters'
+    export default {
+        props: ['title', 'description', 'price', 'img', 'id'],
+        mixins: [filters]
+    }
 </script>
 
 <style lang="sass?outputStyle=expanded">
     .cart-item {
+        position: relative;
         td {
             border-bottom:1pt solid black;
             padding: 20px 0 3px 0;
@@ -47,8 +50,10 @@ export default {
                 }
             }
             &__description {
+                max-width: 70%;
                 display: inline-block;
                 vertical-align: top;
+                margin-left: 15px;
                 .product-name {
                     margin: 0;
                     font-size: 16px;
@@ -61,6 +66,7 @@ export default {
 
         .quantity {
             text-align: center;
+            width: 10%;
             &__minus,
             &__plus {
                 display: inline-block;
@@ -71,7 +77,7 @@ export default {
             }
             &__selected {
                 display: inline-block;
-                width: 30px;
+                width: 20px;
                 padding: 3px 5px;
                 text-align: center;
             }
@@ -81,10 +87,12 @@ export default {
         .price {
             text-align: center;
             font-size: 14px;
+            width: 15%;
         }
 
         .remove-item {
             text-align: center;
+            width: 10%;
             &__btn {
                 width: 12px;
                 display: inline-block;

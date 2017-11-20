@@ -12,9 +12,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <cart-item></cart-item>
+                    <template v-for="item of getCart">
+                        <cart-item
+                        :title="item.volumeInfo.title"
+                        :description="item.volumeInfo.description"
+                        :price="item.saleInfo.listPrice"
+                        :img="item.volumeInfo.imageLinks.thumbnail"
+                        :id="item.id"
+                        ></cart-item>
+                    </template>
                 </tbody>
             </table>
+            <div class="totalize"><strong>TOTAL:</strong> <span class="total">R$ {{ amount }}</span></div>
         </div>
     </section>
   </div>
@@ -29,8 +38,33 @@
 		},
 		data() {
 			return {
+                amount: '00.00'
 			};
-		}
+        },
+        methods: {
+           
+        },
+        computed: {
+            getCart: function() {
+                const cart = this.$store.state.cart;
+				return cart;
+            },
+            getTotal: function() {
+                const cart = this.$store.state.cart;
+                if(cart) {
+                    let getPrices = [];
+                    cart.map((item) => {
+                        getPrices.push(item.saleInfo.listPrice.amount);
+                    })
+
+                    var total = getPrices.reduce((a, b) => a + b, 0);
+                    this.amount = total;
+                }
+            }
+        },
+        created: function() {
+            this.getTotal
+        }
 	};
 </script>
 
@@ -52,6 +86,16 @@
                 font-size: 14px;
                 font-weight: 400;
             }
+        }
+    }
+
+    .totalize {
+        width: 100%;
+        padding: 10px 0;
+        text-align: right;
+        .total {
+            font-size: 24px;
+            margin-left: 10px;
         }
     }
 
