@@ -6,7 +6,6 @@
                 <thead>
                     <tr>
                         <th>Produto</th>
-                        <th>Quantidade</th>
                         <th>Preço</th>
                         <th>Remover</th>
                     </tr>
@@ -41,9 +40,6 @@
                 amount: '00.00'
 			};
         },
-        methods: {
-           
-        },
         computed: {
             getCart: function() {
                 const cart = this.$store.state.cart;
@@ -52,17 +48,17 @@
             getTotal: function() {
                 const cart = this.$store.state.cart;
                 if(cart) {
-                    let getPrices = [];
-                    cart.map((item) => {
+                   let getPrices = [];
+                    cart.map((item, index) => {
                         getPrices.push(item.saleInfo.listPrice.amount);
                     })
 
                     var total = getPrices.reduce((a, b) => a + b, 0);
-                    this.amount = total;
+                    this.amount = total.toFixed(2);
                 }
             }
         },
-        created: function() {
+        mounted: function() {
             this.getTotal
         }
 	};

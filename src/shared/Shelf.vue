@@ -9,7 +9,7 @@
 			<p class="shelf__description">{{ description | truncate(40) }}</p>
 			<p class="shelf__price">{{ price | currentConverter }}</p>
 		</div>
-		<a :href="id" @click="getId" class="shelf__buy" v-if="price">Comprar</a>
+		<a :href="id" @click="addToCart" class="shelf__buy" v-if="price">Comprar</a>
     </div>
 </template>
 
@@ -19,12 +19,21 @@ export default {
 	props: ['title', 'description', 'price', 'img', 'id'],
 	mixins: [filters],
 	methods: {
-		getId: function(event) {
+		addToCart: function(event) {
 			event.preventDefault();
+			let cart = this.$store.state.cart;
+			let allItens = [];
 			const thisId = event.currentTarget.getAttribute('href');
 			let item = this.$store.getters.getItem(thisId);
-
+			
+			// Atualiza o store cart
 			this.$store.dispatch('ADD_CART', item);
+
+			// Update Section Storage			
+			cart.map((item) => {
+				allItens.push(item);
+			})
+			window.localStorage.setItem('cart', JSON.stringify(allItens));
 		}
 	}
 	

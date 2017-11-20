@@ -9,11 +9,6 @@
                 <p class="product-description">{{ description | truncate(200) }}</p>
             </div>
         </td>
-        <td class="quantity">
-            <div class="quantity__minus">-</div>
-            <input type="text" class="quantity__selected" value="1">
-            <div class="quantity__plus">+</div>
-        </td>
         <td class="price">
             <span class="price__amount">{{ price  | currentConverter }}</span>
         </td>
