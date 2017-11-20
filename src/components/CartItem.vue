@@ -97,4 +97,26 @@
             }
         }
     }
+
+    @media screen and (min-width: 470px) and (max-width: 590px) {
+        .cart-item {
+            .product__description {
+                width: 60%;
+            }
+        }
+	}
+
+	@media screen and (max-width: 469px) {
+        .cart-item {
+            .product__description {
+                display: none;
+            }
+            .price {
+                width: 30%;
+            }
+            .remove-item {
+                width: 30%;
+            }
+        }
+	}
 </style>

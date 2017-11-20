@@ -2,7 +2,7 @@
 	<footer class="footer">
 		<div class="container">
 			<p>Amazing Potato Fake Co LTDA Copyright Lorem Ipsum Joe - 2017.
-				<small>Veja nosso código no <a href="https://github.com/Andreolle/livraria-stone" title="me contrata aê na moral.com.br" target="_blank">git</a></small>
+				<small>Veja nosso código no <a href="https://github.com/Andreolle/livraria-stone" title="https://github.com/Andreolle/livraria-stone" target="_blank">git</a></small>
 			</p>
 		</div>
     </footer>
