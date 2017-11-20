@@ -29,6 +29,7 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
     import Item from "../components/CartItem.vue"
 
 	export default {
@@ -56,10 +57,21 @@
                     var total = getPrices.reduce((a, b) => a + b, 0);
                     this.amount = total.toFixed(2);
                 }
+            },
+            watch: function() {
+                this.$store.watch(
+                    (state)=>{
+                        return this.$store.state.cart
+                    },
+                    (oldValue, newValue)=>{
+                        this.getTotal
+                    }
+                )
             }
         },
         mounted: function() {
             this.getTotal
+            this.watch
         }
 	};
 </script>

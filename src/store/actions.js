@@ -18,5 +18,8 @@ export default {
     },
     ADD_CART(item, id) {
         item.commit('ADD_CART', id);
+    },
+    REMOVE_CART(item, id) {
+        item.commit('REMOVE_CART', id);
     }
 }

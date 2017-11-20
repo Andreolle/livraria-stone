@@ -13,7 +13,7 @@
             <span class="price__amount">{{ price  | currentConverter }}</span>
         </td>
         <td class="remove-item">
-            <a href="#" class="remove-item__btn">
+            <a href="#" @click="removeItem" :data-id="id" class="remove-item__btn">
                 <img src="../assets/img/remove.svg">
             </a>
         </td>
@@ -24,7 +24,16 @@
     import filters from '../module/filters'
     export default {
         props: ['title', 'description', 'price', 'img', 'id'],
-        mixins: [filters]
+        mixins: [filters],
+        methods: {
+            removeItem: function(event) {
+                event.preventDefault();
+                const getId = event.currentTarget.getAttribute('data-id');
+                const item = this.$store.getters.getCartItem(getId);
+
+                this.$store.dispatch('REMOVE_CART', item);
+            }
+        }
     }
 </script>
 

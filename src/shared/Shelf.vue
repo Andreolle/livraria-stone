@@ -36,7 +36,6 @@ export default {
 			window.localStorage.setItem('cart', JSON.stringify(allItens));
 		}
 	}
-	
 }
 </script>
 
