@@ -9,13 +9,13 @@
 			<p class="shelf__description">{{ description | truncate(40) }}</p>
 			<p class="shelf__price">{{ price | currentConverter }}</p>
 		</div>
-		<a href="#" class="shelf__buy" v-if="price">Comprar</a>
+		<a :href="id" @click="getId" class="shelf__buy" v-if="price">Comprar</a>
     </div>
 </template>
 
 <script>
 export default {
-	props: ['title', 'description', 'price', 'img'],
+	props: ['title', 'description', 'price', 'img', 'id'],
 	filters: {
 		truncate(value, qty) {
 			if(value) {
@@ -38,6 +38,15 @@ export default {
 			} else {
 				return "Produto Indisponível";
 			}
+		}
+	},
+	methods: {
+		getId: function(event) {
+			event.preventDefault();
+			const thisId = event.currentTarget.getAttribute('href');
+			let item = this.$store.getters.getItem(thisId);
+
+			this.$store.dispatch('ADD_CART', item);
 		}
 	}
 	

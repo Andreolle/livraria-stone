@@ -7,6 +7,7 @@
 				:description="book.volumeInfo.description"
 				:price="book.saleInfo.listPrice"
 				:img="book.volumeInfo.imageLinks.thumbnail"
+				:id="book.id"
 				></shelf>
 			</template>
 		</shelf-display>

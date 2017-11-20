@@ -2,7 +2,7 @@ import Vue from "vue"
 import { error } from "util";
 
 export default {
-    GET_BOOKS(content,search){
+    GET_BOOKS(content,search) {
         let term = search == undefined ? 'nerd+games+rpg' : search;
         const list = Vue.http.get(`https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=28&orderBy=newest`);
         const books = [];
@@ -15,5 +15,8 @@ export default {
         }).catch(error => {
             console.log("Resultado não encontrado");
         })
+    },
+    ADD_CART(item, id) {
+        item.commit('ADD_CART', id);
     }
 }

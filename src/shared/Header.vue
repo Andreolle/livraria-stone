@@ -20,7 +20,7 @@
 						<img src="../assets/img/shopping-cart.svg" alt="">
 					</div>
 				</router-link>
-				<div class="minicart__quantity">00</div>
+				<div class="minicart__quantity">{{cartQty}}</div>
 			</div>
 		</div>
     </header>
@@ -36,8 +36,16 @@ export default {
 	methods: {
 		'search': function() {
 			let term = this.searchText;
-			this.$store.dispatch('GET_BOOKS', term);
-			document.querySelectorAll('.search-field')[0].value = ""
+			if(term.length != 0) {
+				this.$store.dispatch('GET_BOOKS', term);
+				document.querySelectorAll('.search-field')[0].value = ""
+			}
+		}
+	},
+	computed: {
+		cartQty: function() {
+			let quantity = this.$store.state.cart;
+			return quantity.length;
 		}
 	}
 }
