@@ -11,12 +11,13 @@
 <script>
 	import Header from "./shared/Header.vue"
 	import Footer from "./shared/Footer.vue"
+	import Vue from "vue"
 
 	export default {
 		components: {
 			"page-header": Header,
 			"page-footer": Footer
-		}
+		}		
 	}
 </script>
 

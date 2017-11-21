@@ -1,7 +1,17 @@
 <template>
 	<div>
 		<shelf-display>
-			<template v-for="book of getList">
+			<template v-for="book of getList" v-if="search.length == 0">
+				<shelf 
+				:title="book.volumeInfo.title"
+				:description="book.volumeInfo.description"
+				:price="book.saleInfo.listPrice"
+				:img="book.volumeInfo.imageLinks.thumbnail"
+				:id="book.id"
+				></shelf>
+			</template>
+
+			<template v-for="book of search" v-if="search.length != 0">
 				<shelf 
 				:title="book.volumeInfo.title"
 				:description="book.volumeInfo.description"
@@ -25,17 +35,29 @@
 		},
 		data() {
 			return {
-				searchTerm: ""
-			};
+				search: []
+			}
 		},
 		computed: {
 			getList: function() {
 				const list = this.$store.state.books;
-				return list;
+				return this.books = list;
+			},
+			watch: function() {
+				this.$store.watch(
+					(state)=>{
+						return this.$store.state.search
+					},
+					(state)=>{
+						this.search = state;
+					}
+				)
 			}
 		},
-		created () {
-			this.$store.dispatch('GET_BOOKS');
+		created() {
+			this.$store.dispatch('INIT_BOOKS');
+			this.getList
+			this.watch
 		}
 	};
 </script>

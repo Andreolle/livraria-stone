@@ -1,6 +1,9 @@
 export default {
-    GET_BOOKS(state, data) {
+    INIT_BOOKS(state, data) {
         state.books = data;
+    },
+    GET_BOOKS(state, data) {
+        state.search = data;
     },
     ADD_CART(state, data) {
         let cart = state.cart;
