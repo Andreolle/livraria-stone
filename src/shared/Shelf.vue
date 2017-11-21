@@ -25,6 +25,8 @@ export default {
 			let allItens = [];
 			const thisId = event.currentTarget.getAttribute('href');
 			let item = this.$store.getters.getItem(thisId);
+
+			console.log(item)
 			
 			// Atualiza o store cart
 			this.$store.dispatch('ADD_CART', item);

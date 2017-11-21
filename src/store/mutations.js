@@ -3,7 +3,7 @@ export default {
         state.books = data;
     },
     GET_BOOKS(state, data) {
-        state.search = data;
+        state.books = data;
     },
     ADD_CART(state, data) {
         let cart = state.cart;

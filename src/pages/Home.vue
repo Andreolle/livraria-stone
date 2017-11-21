@@ -1,17 +1,7 @@
 <template>
 	<div>
 		<shelf-display>
-			<template v-for="book of getList" v-if="search.length == 0">
-				<shelf 
-				:title="book.volumeInfo.title"
-				:description="book.volumeInfo.description"
-				:price="book.saleInfo.listPrice"
-				:img="book.volumeInfo.imageLinks.thumbnail"
-				:id="book.id"
-				></shelf>
-			</template>
-
-			<template v-for="book of search" v-if="search.length != 0">
+			<template v-for="book of getList">
 				<shelf 
 				:title="book.volumeInfo.title"
 				:description="book.volumeInfo.description"
@@ -46,10 +36,11 @@
 			watch: function() {
 				this.$store.watch(
 					(state)=>{
-						return this.$store.state.search
+						return this.$store.state.books
 					},
 					(state)=>{
-						this.search = state;
+						this.books = state;
+						console.log(state)
 					}
 				)
 			}

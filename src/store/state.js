@@ -4,7 +4,6 @@ const LSBooks = window.localStorage.getItem('books');
 const parsedBooks = JSON.parse(LSBooks) || [];
 
 export default {
-    'search': [],
     'books': parsedBooks,
     'cart': parsedCart
 }
