@@ -30,7 +30,7 @@
                         </template>
                     </tbody>
                 </table>
-                <div class="totalize"><strong>TOTAL:</strong> <span class="total">R$ {{ amount }}</span></div>
+                <div class="totalize"><router-link to="/" class="btn-back">Voltar </router-link> <strong>TOTAL:</strong> <span class="total">R$ {{ amount }}</span></div>
             </template>
         </div>
     </section>
@@ -114,6 +114,10 @@
             font-size: 24px;
             margin-left: 10px;
         }
+
+        .btn-back {
+            float: left;
+        }
     }
 
     .empty-cart {
@@ -125,17 +129,18 @@
         p {
             margin: 5px 0 25px 0;
         }
-        .btn-back {
-            display: inline-block;
-            text-transform: uppercase;
-            background: #95c93f;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 15px;
-            box-sizing: border-box;
-            &:hover {
-                background: darken(#95c93f, 12%);
-            }
+    }
+
+    .btn-back {
+        display: inline-block;
+        text-transform: uppercase;
+        background: #95c93f;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        &:hover {
+            background: darken(#95c93f, 12%);
         }
     }
 
