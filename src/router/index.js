@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home'
 import Cart from '@/pages/Cart'
+import NotFound from '@/pages/NotFound'
 
 Vue.use(Router)
 
@@ -21,9 +22,7 @@ export default new Router({
     {
       path: '*',
       name: '404',
-      component: {
-        template: '<div class="container"><h1>Página não encontrada</h1></div>'
-      }
+      component: NotFound
     }
   ]
 })
