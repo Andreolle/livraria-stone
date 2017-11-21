@@ -19,8 +19,9 @@ export default {
         });
     },
     GET_BOOKS(content,search) {
-        let term = search == undefined ? 'games' : search;
-        const list = Vue.http.get(`https://www.googleapis.com/books/v1/volumes?q=${term}&orderBy=newest&maxResults=28&orderBy=newest`);
+        let term = search;
+        term = term.toLowerCase();
+        const list = Vue.http.get(`https://www.googleapis.com/books/v1/volumes?q="${term}"&orderBy=newest&maxResults=28&orderBy=newest`);
         const books = [];
         list.then(res => res.json())
         .then(res => {
